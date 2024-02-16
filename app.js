@@ -14,6 +14,111 @@ let seeds = document.getElementById("seeds")
 let foods = document.getElementById("foods")
 let mobs = document.getElementById("mobs")
 
+let rules = document.getElementById("rules")
+let ex = document.getElementById("ex")
+let forward1 = document.getElementById("forward1")
+let back2 = document.getElementById("back2")
+
+let book = document.getElementById("book")
+let text1 = document.getElementById("text1")
+
+let placeholder = document.getElementById("placeholder")
+let page = document.getElementById("page")
+let inf = document.getElementById("inf")
+var a = 0;
+
+forward1.addEventListener("click",()=>{
+    a++;
+    filler(a)
+})
+
+back2.addEventListener("click",()=>{
+    a--;
+    filler(a)
+})
+ex.addEventListener("click",()=>{
+    book.style.display="none"
+})
+rules.addEventListener("click",()=>{
+    book.style.display="flex"
+})
+
+
+function filler(t) {
+    switch (t) {
+        case 1:
+            page.innerHTML="Page 2 of 7"
+            inf.innerHTML = `KURALLAR <br>
+            1. Twitch topluluk ve kanalın genel sohbet, davranış kuralları sunucu içerisinde de geçerlidir. <br>
+            <br>
+            2. Sunucuda başkalarının oyun keyfini azaltabileceğini düşündüğünüz tüm aksiyonlardan kaçının. 
+
+                    ->`
+            break;
+        case 2:
+            page.innerHTML="Page 3 of 7"
+            inf.innerHTML=`3. Vilonya MC Sunucusu özel bir sunucudur. İnşa ettiğiniz alanları güvenli hale getirmek için bit bağışı karşılığında arazi bloğu alıp arazinizi
+            güvenli hale getirebilirsiniz. Arazi sahibi kişilerin eşyalarına ve yapılarına zarar veremiyor olmanız, arazisi olmayan oyuncuların yapılarına ->
+             `
+            break;
+        case 3:
+            page.innerHTML="Page 4 of 7"
+            inf.innerHTML=` zarar verebileceğiniz anlamına gelmez. Bu yüzden her oyuncuya karşı eşit ve adaletli davrandığınızdan ve emeğe saygı gösterdiğinizden emin olun. <br>
+            <br>
+            4. Sunucunun çevre düzenini korumak için inşaat kısıtlamalarını dikkate alın.->
+            <br>
+            <br>`
+            break;
+        case 4:
+            page.innerHTML="Page 5 of 7"
+            inf.innerHTML=`KISITLAMALAR: <br>
+            - Vadide max. 2 katlı yapılar yapmaya, tarla ve bahçelerinizi optimum genişlikte tutmaya çalışın.
+            Çiftliklerinizdeki hayvan sayısının yakınlardaki evlerde gürültüye sebep olmadığından emin olun. <br>
+            Vadide modern/fütüristik yapılardan kaçının. ->`
+            break;
+        case 5:
+            page.innerHTML="Page 6 of 7"
+            inf.innerHTML=`Bu tür yapılar için merkezden görünmeyecek uzaklıkta yerleri tercih edin. Vadide gösterişli maden girişlerinden kaçının ya da evinizin altından giriş yapın.
+            Uzun maden maceraları için vadiden uzak alanlara bakın. Vadi ve etrafı oyuncuların yaşam alanıdır. `
+            break;
+        case 6:
+            page.innerHTML="Page 7 of 7"
+            inf.innerHTML=`Bu yüzden doğal dokusunu korumaya özen gösterin. Göz alıcı 
+            blok, renk ve aydınlatmalar kullanmaktan kaçının.
+            <br>
+            Kurallara uyan her oyuncuya şimdiden teşekkürler. Vilonya'da kalbi iyilik için atan herkese her zaman yer var. 
+            <br>
+            <br>`
+            break;
+
+        default:
+            break;
+    }
+
+    if(t<=0){
+        back2.style.display="none"
+        placeholder.style.display="block"
+        page.innerHTML="Page 1 of 7"
+        inf.innerHTML=`Sevgi, barış ve doğaya saygının hüküm sürdüğü Vilonya'mızda yeni bir başlangıç
+        yapmadan önce her oyuncunun kuralları okuyup anladığından emin olması gerekir.
+        Lütfen 2 dakikanızı ayırarak sunucunun daha iyi bir yer olmasını sağlayacak kurallara göz atın.
+                ->`
+    }
+    if (t>0 && t<6) {
+        back2.style.display="block"
+        placeholder.style.display="none"
+    }
+
+    if(t>=6){
+        forward1.style.display = "none"
+        
+    }else{
+        forward1.style.display = "block"
+    }
+}
+
+
+
 m1.addEventListener("click",()=>{
     console.log("tıklandı")
     m1.classList.add("active")
