@@ -7,6 +7,11 @@
     --color-yellow:#D3A6FF;
 
 }
+@font-face {
+  font-family: Minecraftia;
+  src:url("Minecraftia.ttf") 
+}
+
 html {
   overflow:   scroll;
 }
@@ -23,6 +28,7 @@ body {
     line-height: 1.5;
     color: var(--color-blue-dark);
     background: var(--color-white);
+    margin: 0px;
   }
 
 .title{
@@ -64,6 +70,8 @@ body {
     align-items: center;
     justify-content:space-between;
     box-shadow: 5px 5px 10px #bdc0c9 ;
+    user-select: none;
+    cursor: pointer;
   }
   .tab:hover{
     background-color: var(--color-yellow);
@@ -207,4 +215,111 @@ body {
   .cardmobs .img img{
     width: 90px;
     height: 170px;
+  }
+
+  .rules{
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    margin-left: 30px;
+    border-radius: 5px;
+    width: 80px;
+    height: 80px;
+    padding: 5px;
+    z-index: 5;
+    overflow: hidden;
+    box-shadow:inset 0px 0px 8px 2px var(--color-yellow);
+    cursor: pointer;
+    user-select: NONE;
+   
+  }
+  .rules img{
+    width: 60px;
+    height: 60px;
+  }
+  .rules:hover{
+    scale: 1.1;
+    background-color: #D3A6FF;
+  }
+
+  .book {
+    display: none;
+    position: absolute;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    height: 100%;
+    margin: 0 auto;
+    z-index: 3;
+    background-color: #9ca0b3e1;
+  }
+  .bookbg img {
+    width: 370px;
+    height: 468px;
+  }
+  .text1{
+    font-family: Minecraftia;
+    display: block;
+    position: absolute;
+    margin-top: 43px;
+    line-height: 31.3px;
+    font-size: large;
+    max-width: 300px;
+    max-height: 450px;
+    padding-left: 40px;
+  }
+.back{
+  display: none;
+}
+
+
+
+  .arrows{
+    padding-left: 30px;
+    padding-right: 60px;
+    height: 20px;
+    display: flex;
+    justify-content:space-between;
+  }
+  .arrows img{
+    width: 36px;
+    height: 23px;
+  }
+
+  .back:hover{
+    background-color: #8f1f1f;
+    border-radius: 5px;
+    padding: 3px;
+    cursor: pointer;
+  }
+  .forward:hover{
+    background-color: #1f8f32;
+    border-radius: 5px;
+    padding: 3px;
+    cursor: pointer;
+  }
+
+  .ex{
+    position: relative;
+    margin-right: 360px;
+    padding: 10px;
+    color: #ffffff;
+    font-weight: bold;
+    border-radius: 5px;
+    left: 320px;
+    bottom: 5px;
+    font-size: x-large;
+    background-color: #8f1f1f;
+    user-select: none;
+  }
+
+  .ex:hover{
+    scale: 1.1;
+    background-color:#ec1010 ;
+    cursor: pointer;
   }
