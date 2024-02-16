@@ -12,9 +12,7 @@
   src:url("Minecraftia.ttf") 
 }
 
-html {
-  overflow:   scroll;
-}
+
 
 ::-webkit-scrollbar {
     width: 0px;
